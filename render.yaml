@@ -1,0 +1,15 @@
+# Blueprint: https://dashboard.render.com/select-repo?type=blueprint
+# После деплоя API будет на https://kompleks-shelestgrez-kp2.onrender.com
+services:
+  - type: web
+    name: kompleks-shelestgrez-kp2
+    runtime: docker
+    region: frankfurt
+    plan: free
+    rootDir: backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: CORS_ORIGINS_EXTRA
+        value: https://shelestgrez.github.io
+      - key: SECRET_KEY
+        generateValue: true
