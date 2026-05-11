@@ -45,7 +45,7 @@ jobs:
         env:
           VITE_BASE_PATH: ${{ steps.base.outputs.path }}
         run: |
-          npm ci
+          npm install --no-audit --no-fund
           npm run build
           cp dist/index.html dist/404.html
 
