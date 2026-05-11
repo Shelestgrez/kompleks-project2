@@ -11,7 +11,10 @@ import type {
   User,
 } from './types'
 
-const API = ''
+/** Пусто = тот же origin (Vite proxy в dev). Иначе полный URL бэкенда, без завершающего `/`. */
+export const apiOrigin = (import.meta.env.VITE_API_URL as string | undefined)?.trim().replace(/\/$/, '') ?? ''
+
+const API = apiOrigin
 
 function authHeaders(): HeadersInit {
   const t = localStorage.getItem('token')

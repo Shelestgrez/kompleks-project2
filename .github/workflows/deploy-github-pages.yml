@@ -40,10 +40,13 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
+      # Repository secret VITE_API_URL = публичный URL API (https://... без слэша в конце).
+      # На бэкенде: CORS_ORIGINS_EXTRA=https://<user>.github.io (origin без пути к репозиторию).
       - name: Install and build
         working-directory: frontend
         env:
           VITE_BASE_PATH: ${{ steps.base.outputs.path }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
         run: |
           npm install --no-audit --no-fund
           npm run build

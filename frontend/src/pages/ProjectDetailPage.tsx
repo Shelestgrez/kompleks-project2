@@ -6,6 +6,7 @@ import {
   apiCreateTask,
   apiCreateTest,
   apiDocuments,
+  apiOrigin,
   apiPhases,
   apiProject,
   apiTasks,
@@ -189,7 +190,7 @@ export function ProjectDetailPage() {
     body.append('title', String(fd.get('title') || file.name))
     body.append('doc_type', String(fd.get('doc_type') || ''))
     try {
-      const res = await fetch(`/api/projects/${projectId}/documents/upload`, {
+      const res = await fetch(`${apiOrigin}/api/projects/${projectId}/documents/upload`, {
         method: 'POST',
         headers: token ? { Authorization: `Bearer ${token}` } : {},
         body,
@@ -470,7 +471,7 @@ export function ProjectDetailPage() {
                   <td className="px-4 py-2">
                     {d.file_path ? (
                       <a
-                        href={`/files/${d.file_path}`}
+                        href={`${apiOrigin}/files/${d.file_path}`}
                         className="text-brand-700 hover:underline font-medium"
                         target="_blank"
                         rel="noreferrer"
