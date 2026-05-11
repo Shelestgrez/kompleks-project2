@@ -6,6 +6,7 @@ services:
     runtime: docker
     region: frankfurt
     plan: free
+    branch: main
     rootDir: backend
     healthCheckPath: /api/health
     envVars:
