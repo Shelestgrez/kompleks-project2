@@ -34,6 +34,20 @@ async function parseError(res: Response): Promise<string> {
   return res.statusText || 'Ошибка запроса'
 }
 
+export async function apiSignup(data: {
+  email: string
+  full_name: string
+  password: string
+}): Promise<User> {
+  const res = await fetch(`${API}/api/auth/signup`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(data),
+  })
+  if (!res.ok) throw new Error(await parseError(res))
+  return res.json()
+}
+
 export async function apiLogin(username: string, password: string): Promise<{ access_token: string }> {
   const body = new URLSearchParams({ username, password })
   const res = await fetch(`${API}/api/auth/login`, {

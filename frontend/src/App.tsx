@@ -4,6 +4,7 @@ import { Layout } from './components/Layout'
 import { RequireAuth } from './components/RequireAuth'
 import { DashboardPage } from './pages/DashboardPage'
 import { LoginPage } from './pages/LoginPage'
+import { RegisterPage } from './pages/RegisterPage'
 import { ProjectDetailPage } from './pages/ProjectDetailPage'
 import { ProjectsPage } from './pages/ProjectsPage'
 
@@ -13,6 +14,7 @@ export default function App() {
       <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route
             element={
               <RequireAuth>

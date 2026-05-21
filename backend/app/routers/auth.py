@@ -26,12 +26,30 @@ def login(
     return schemas.Token(access_token=token)
 
 
+@router.post("/signup", response_model=schemas.UserOut, status_code=status.HTTP_201_CREATED)
+def signup(body: schemas.UserRegister, db: Annotated[Session, Depends(get_db)]):
+    """Публичная регистрация: новый пользователь с ролью viewer."""
+    if db.query(models.User).filter(models.User.email == body.email).first():
+        raise HTTPException(status_code=400, detail="Email уже зарегистрирован")
+    user = models.User(
+        email=body.email,
+        hashed_password=get_password_hash(body.password),
+        full_name=body.full_name,
+        role=models.UserRole.viewer,
+    )
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+    return user
+
+
 @router.post("/register", response_model=schemas.UserOut)
 def register(
     body: schemas.UserCreate,
     db: Annotated[Session, Depends(get_db)],
     _: Annotated[models.User, Depends(require_roles(models.UserRole.admin))],
 ):
+    """Создание пользователя с любой ролью (только admin)."""
     if db.query(models.User).filter(models.User.email == body.email).first():
         raise HTTPException(status_code=400, detail="Email уже зарегистрирован")
     user = models.User(

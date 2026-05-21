@@ -56,6 +56,71 @@ const messages: Messages = {
     kk: 'Кіру…',
     en: 'Signing in…',
   },
+  'auth.registerTitle': {
+    ru: 'Регистрация',
+    kk: 'Тіркелу',
+    en: 'Sign up',
+  },
+  'auth.registerSubtitle': {
+    ru: 'Создайте учётную запись для доступа к системе',
+    kk: 'Жүйеге кіру үшін тіркелгі жасаңыз',
+    en: 'Create an account to access the system',
+  },
+  'auth.fullName': {
+    ru: 'ФИО',
+    kk: 'Аты-жөні',
+    en: 'Full name',
+  },
+  'auth.passwordConfirm': {
+    ru: 'Повторите пароль',
+    kk: 'Құпия сөзді қайталаңыз',
+    en: 'Confirm password',
+  },
+  'auth.registerButton': {
+    ru: 'Зарегистрироваться',
+    kk: 'Тіркелу',
+    en: 'Sign up',
+  },
+  'auth.registerBusy': {
+    ru: 'Регистрация…',
+    kk: 'Тіркелу…',
+    en: 'Signing up…',
+  },
+  'auth.registerPasswordMismatch': {
+    ru: 'Пароли не совпадают',
+    kk: 'Құпия сөздер сәйкес келмейді',
+    en: 'Passwords do not match',
+  },
+  'auth.registerPasswordShort': {
+    ru: 'Пароль не менее 6 символов',
+    kk: 'Құпия сөз кемінде 6 таңба',
+    en: 'Password must be at least 6 characters',
+  },
+  'auth.registerError': {
+    ru: 'Ошибка регистрации',
+    kk: 'Тіркелу қатесі',
+    en: 'Registration failed',
+  },
+  'auth.noAccount': {
+    ru: 'Нет аккаунта?',
+    kk: 'Тіркелгіңіз жоқ па?',
+    en: 'No account?',
+  },
+  'auth.registerLink': {
+    ru: 'Зарегистрироваться',
+    kk: 'Тіркелу',
+    en: 'Sign up',
+  },
+  'auth.hasAccount': {
+    ru: 'Уже есть аккаунт?',
+    kk: 'Тіркелгіңіз бар ма?',
+    en: 'Already have an account?',
+  },
+  'auth.loginLink': {
+    ru: 'Войти',
+    kk: 'Кіру',
+    en: 'Sign in',
+  },
   'layout.logout': {
     ru: 'Выйти',
     kk: 'Шығу',
