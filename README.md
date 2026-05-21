@@ -2,6 +2,17 @@
 
 Веб-приложение: учёт проектов (архитектура, инженерные изыскания, испытания), задач, договоров, документов и записей испытаний.
 
+## Онлайн (уже задеплоено)
+
+| Что | Ссылка |
+|-----|--------|
+| **Сайт (вход, регистрация)** | https://shelestgrez.github.io/kompleks-project2/ |
+| Вход | https://shelestgrez.github.io/kompleks-project2/login |
+| Регистрация | https://shelestgrez.github.io/kompleks-project2/register |
+| API (только бэкенд, не интерфейс) | https://kompleks-project2.onrender.com |
+
+На `kompleks-project2.onrender.com` в корне — API, не страница приложения. Интерфейс открывайте по ссылке **GitHub Pages** выше.
+
 ## Возможности интерфейса
 
 - Тёмная и светлая тема (сохраняется в браузере).
