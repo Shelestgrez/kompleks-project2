@@ -44,6 +44,22 @@ upload_root = Path(__file__).resolve().parent.parent
 app.mount("/files", StaticFiles(directory=str(upload_root)), name="files")
 
 
+SITE_URL = "https://shelestgrez.github.io/kompleks-project2/"
+
+
+@app.get("/")
+def root():
+    return {
+        "app": settings.app_name,
+        "message": "Это API-сервер. Сайт открывается по другой ссылке.",
+        "site": SITE_URL,
+        "login": f"{SITE_URL}login",
+        "register": f"{SITE_URL}register",
+        "health": "/api/health",
+        "docs": "/docs",
+    }
+
+
 @app.get("/api/health")
 def health():
     return {"status": "ok"}
