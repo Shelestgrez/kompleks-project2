@@ -50,6 +50,12 @@ class UserCreate(UserBase):
     password: str = Field(min_length=6)
 
 
+class UserRegister(BaseModel):
+    email: EmailStr
+    full_name: str = Field(min_length=2, max_length=255)
+    password: str = Field(min_length=6)
+
+
 class UserOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
